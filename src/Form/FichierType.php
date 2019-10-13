@@ -32,9 +32,20 @@ class FichierType extends AbstractType
             ])
         ->add('nomfile', FileType::class, [
               'label' =>'',
-              'attr'  => ['placeholder' => 'Fichier à envoyer'],
-              'mapped' => false,
-            ])
+              // 'attr'  => ['placeholder' => 'Fichier à envoyer'],
+              'required'        => false,
+              // 'mapped' => false,
+              // 'constraints' => [
+              //   new FileType([
+              //     'maxSize' => '1024k',
+              //     'mimeTypes' => [
+              //       '',
+              //       '',
+              //     ],
+              //     'mimeTypesMessage' => 'Please upload a valid PDF document',
+              //   ])
+              //   ],
+              ])
 
         ->add('Envoyer', SubmitType::class, [
                       'label' => 'Envoyer le(s) fichier(s)',

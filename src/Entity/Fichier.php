@@ -28,12 +28,12 @@ class Fichier
     private $expd;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string")
      */
     private $nomfile;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=255)
      */
     private $nomdest;
 
@@ -48,7 +48,7 @@ class Fichier
         return $this->dest;
     }
 
-    public function setDest(string $dest): ?string
+    public function setDest(string $dest): self
     {
         $this->dest = $dest;
 
