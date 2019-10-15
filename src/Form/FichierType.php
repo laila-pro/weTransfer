@@ -17,32 +17,32 @@ class FichierType extends AbstractType
     {
         $builder
         ->add('nomdest', TextType::class, [
-          'label'           => '',
+          'label'           => false,
           'attr'            => ['placeholder' => 'Votre Nom'],
           'required'        => true,
         ])
         ->add('dest' , TextType::class, [
-              'label'           => '',
+              'label'           => false,
               'attr'            => ['placeholder' => ' email du destinataire'],
               'required'        => true,
             ])
         ->add('expd', TextType::class,[
-              'label'           => '',
+              'label'           => false,
               'attr'            => ['placeholder' => 'Votre mail'],
               'required'        => true,
             ])
         ->add('nomfile', FileType::class, [
-              'label' =>'',
+              'label' =>false,
               // 'attr'  => ['placeholder' => 'Fichier à envoyer'],
               'required'        => false,
               'mapped' => false,
                'constraints' => [
                  new File([
                    'maxSize' => '1024k',
-                   'mimeTypes' => [
-                     '',
-                     '',
-                   ],
+                   // 'mimeTypes' => [
+                   //   '',
+                   //   '',
+                   // ],
                    'mimeTypesMessage' => 'charger une image',
                  ])
                  ],

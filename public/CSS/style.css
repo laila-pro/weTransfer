@@ -1,0 +1,17 @@
+.styleform {
+  margin: 1em auto;
+  max-width: 600px;
+  /* width: 65%; */
+  font: 18px/1.5 sans-serif;
+    /* padding: 2px 6px; */
+    background-color: white;
+}
+h1{
+  color:white;
+}
+
+#vantajs {
+  position: fixed;
+width: 100vw;
+height: 100vh;
+}

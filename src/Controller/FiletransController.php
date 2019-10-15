@@ -23,12 +23,14 @@ class FiletransController extends AbstractController
 
     public function new(Request $request, \Swift_Mailer $mailer)
     {
-$form->handleRequest($request);
+
 $Fichier = new Fichier();
 $form = $this->createForm(FichierType::class, $Fichier);
 $manager = $this->getDoctrine()->getManager();
       //-------------------------
-      // if ($form->isSubmitted() && $form->isValid()){
+      $form->handleRequest($request);
+
+      if ($form->isSubmitted() && $form->isValid() ){
         $tableau = $request->request->get('fichier');
     dump($request);
 if ($request->request->count() > 0) {
@@ -97,8 +99,8 @@ if ($request->request->count() > 0) {
           /////verifier la validation de l'adresse mail
 
 
-// }
-// dump("erreur");
+ }
+dump("form non valid");
 
 
 }
