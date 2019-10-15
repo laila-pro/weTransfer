@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class FichierType extends AbstractType
 {
@@ -34,17 +35,17 @@ class FichierType extends AbstractType
               'label' =>'',
               // 'attr'  => ['placeholder' => 'Fichier à envoyer'],
               'required'        => false,
-              // 'mapped' => false,
-              // 'constraints' => [
-              //   new FileType([
-              //     'maxSize' => '1024k',
-              //     'mimeTypes' => [
-              //       '',
-              //       '',
-              //     ],
-              //     'mimeTypesMessage' => 'Please upload a valid PDF document',
-              //   ])
-              //   ],
+              'mapped' => false,
+               'constraints' => [
+                 new File([
+                   'maxSize' => '1024k',
+                   'mimeTypes' => [
+                     '',
+                     '',
+                   ],
+                   'mimeTypesMessage' => 'charger une image',
+                 ])
+                 ],
               ])
 
         ->add('Envoyer', SubmitType::class, [
